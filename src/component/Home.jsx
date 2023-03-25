@@ -1,5 +1,5 @@
 import React from 'react'
-import Producs from './Producs'
+import Producs from './Products'
 
 export default function 
 () {
@@ -18,7 +18,7 @@ export default function
             </div>
             </div>
         </div>
-        {/* <Producs/> */}
+         <Producs/> 
     </div>
   )
 }

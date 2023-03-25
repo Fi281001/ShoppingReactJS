@@ -1,6 +1,6 @@
 import React, {useState,useEffect} from 'react'
 import Skeleton from 'react-loading-skeleton';
-
+import { NavLink } from 'react-router-dom';
 export default function () {
 
     const [data,setData] = useState([])
@@ -62,6 +62,7 @@ export default function () {
             return (
                 <>
                 <div className="col-md-3 mb-4">
+                
                 <div class="card h-100 text-center p-4" key={product.id}>
                 <img src={product.image} class="card-img-top" alt={product.titel} height="250px"/>
                 <div class="card-body">
@@ -69,7 +70,7 @@ export default function () {
                     <p class="card-text">
                         ${product.price}
                     </p>
-                    <a href="" class="btn btn-outline-dark">Buy Now</a>
+                    <NavLink to={`/products/${product.id}`} class="btn btn-outline-dark">Buy Now</NavLink>
                 </div>
                 </div>
                 </div>
@@ -88,7 +89,7 @@ export default function () {
                     <h1 className='text-center'>LIST PRODUCTS</h1>
                     <hr/>
                 </div>
-           
+                
             </div>
             <div className="row justify-content-center text-center ">
                 {loading ? <Loading/> : <ShowProducts/>}
